@@ -51,23 +51,17 @@ Currently, the application uses sample data for demonstration purposes. In a pro
 
 ## Deployed Application
 
-🔗 **Live Demo**: https://project-plan-f7snzypxbnrnnz4v2y8rwv.streamlit.app/
+https://project-plan-f7snzypxbnrnnz4v2y8rwv.streamlit.app/
+
 ### Deployment Instructions
 
-#### Streamlit Community Cloud (Recommended)
+#### Streamlit Community Cloud
 1. Push your code to GitHub
 2. Visit [share.streamlit.io](https://share.streamlit.io/)
 3. Connect your GitHub repository
 4. Deploy with one click!
 
-#### Local Docker Deployment
-```bash
-# Create Dockerfile (if needed)
-docker build -t cost-of-living-app .
-docker run -p 8501:8501 cost-of-living-app
-```
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 project-plan/
@@ -86,6 +80,6 @@ project-plan/
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
