@@ -1,12 +1,12 @@
-# Cost of Living Index Dashboard 💰
+# Cost of Living Index Dashboard 
 
 ENG220 Project Repository regarding the Cost of Living Index analysis and visualization.
 
-## 🎯 Project Overview
+## Project Overview
 
 This project presents an interactive Streamlit web application that analyzes and visualizes cost of living data across different countries worldwide. The application provides comprehensive insights into various economic factors that affect the cost of living, including housing costs, groceries, restaurant prices, and local purchasing power.
 
-## ✨ Features
+## Features
 
 - **Interactive Dashboard**: Dynamic filtering and country selection
 - **Multiple Visualizations**: Bar charts, world maps, and correlation matrices
@@ -20,52 +20,21 @@ This project presents an interactive Streamlit web application that analyzes and
 - **Responsive Design**: Mobile-friendly interface
 - **Real-time Updates**: Interactive charts with Plotly
 
-## 👥 Team Members
+## Team Members
 
 **ENG220 Project Team:**
-- **Team Lead**: [Your Name] - Data Analysis & Streamlit Development
-- **Data Scientist**: [Team Member 2] - Statistical Analysis & Visualization
-- **UI/UX Designer**: [Team Member 3] - Interface Design & User Experience
-- **Quality Assurance**: [Team Member 4] - Testing & Documentation
+-
 
 *Note: Please update the team member names and roles according to your actual team composition.*
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Python 3.8 or higher
-- pip package manager
-
-### Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/oxlusio/project-plan.git
-   cd project-plan
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Run the application:**
-   ```bash
-   streamlit run app.py
-   ```
-
-4. **Open your browser:**
-   The application will automatically open in your default browser at `http://localhost:8501`
-
-## 📦 Dependencies
+##  Dependencies
 
 - **streamlit>=1.28.0** - Web application framework
 - **pandas>=2.0.0** - Data manipulation and analysis
 - **plotly>=5.15.0** - Interactive visualizations
 - **numpy>=1.24.0** - Numerical computing
 
-## 🖥️ Usage
+## Usage
 
 1. **Country Selection**: Use the sidebar to select specific countries for comparison
 2. **Index Selection**: Choose different cost of living indices to analyze
@@ -73,23 +42,16 @@ This project presents an interactive Streamlit web application that analyzes and
 4. **World Map**: Explore global cost of living patterns
 5. **Data Download**: Export data for further analysis
 
-## 📊 Data Sources
+## Data Sources
 
 Currently, the application uses sample data for demonstration purposes. In a production environment, data would be sourced from:
 - [Numbeo](https://www.numbeo.com/) - Cost of Living Database
 - [World Bank Open Data](https://data.worldbank.org/)
 - [OECD Data](https://data.oecd.org/)
 
-## 🌐 Deployed Application
+## Deployed Application
 
-🔗 **Live Demo**: [Add your deployed Streamlit app link here]
-
-*Deploy your application using one of these platforms:*
-- [Streamlit Community Cloud](https://streamlit.io/cloud)
-- [Heroku](https://heroku.com/)
-- [Railway](https://railway.app/)
-- [Render](https://render.com/)
-
+🔗 **Live Demo**: https://project-plan-f7snzypxbnrnnz4v2y8rwv.streamlit.app/
 ### Deployment Instructions
 
 #### Streamlit Community Cloud (Recommended)
@@ -116,17 +78,7 @@ project-plan/
 └── data/                # Data files (future enhancement)
 ```
 
-## 🔮 Future Enhancements
-
-- [ ] Real-time data integration from APIs
-- [ ] Historical trend analysis
-- [ ] Prediction models for cost trends
-- [ ] Currency conversion features
-- [ ] Detailed city-level analysis
-- [ ] User authentication and personalized dashboards
-- [ ] Mobile application development
-
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
@@ -137,21 +89,3 @@ project-plan/
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Contact
-
-For questions or support, please contact:
-- **Project Repository**: [https://github.com/oxlusio/project-plan](https://github.com/oxlusio/project-plan)
-- **Course**: ENG220 - Engineering Data Analysis
-- **Academic Year**: 2024-2025
-
-## 🙏 Acknowledgments
-
-- Course instructors and teaching assistants
-- Data providers and open-source community
-- Streamlit team for the amazing framework
-- All team members for their contributions
-
----
-
-**Made with ❤️ by the ENG220 Project Team**
