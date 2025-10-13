@@ -14,6 +14,7 @@ import numpy as np
 from datetime import datetime
 import json
 import matplotlib.pyplot as plt
+import os
 
 # Page configuration
 st.set_page_config(
@@ -33,7 +34,6 @@ The data includes various indices such as Cost of Living, Rent, Groceries, Resta
 @st.cache_data
 def load_sample_data():
     """Load sample cost of living data"""
-    # Create sample data for demonstration
     countries = [
         'Switzerland', 'Norway', 'Iceland', 'Denmark', 'Luxembourg',
         'Singapore', 'United States', 'Ireland', 'Netherlands', 'Australia',
@@ -68,13 +68,14 @@ def load_sample_data():
 # --- NEW: Housing Costs Visualization Section ---
 @st.cache_data
 def load_housing_costs():
-    """Load housing costs dataset from JSON file"""
+    """Load housing costs dataset from JSON file in data/ directory"""
     try:
-        with open("data/housing_costs.json") as f:
+        file_path = os.path.join("data", "housing_costs.json")
+        with open(file_path) as f:
             data = json.load(f)
         return data
     except Exception as e:
-        st.warning(f"Could not load housing costs dataset: {e}")
+        st.warning(f"Could not load housing costs dataset from {file_path}: {e}")
         return None
 
 def show_housing_costs():
@@ -119,7 +120,6 @@ def show_housing_costs():
     # Raw Data
     st.subheader("Raw Housing Cost Data")
     st.dataframe(df_housing, use_container_width=True)
-# --- END NEW SECTION ---
 
 def main():
     """Main application function"""
@@ -134,7 +134,8 @@ def main():
     selected_countries = st.sidebar.multiselect(
         "Select Countries to Compare:",
         options=df['Country'].tolist(),
-        default=df['Country'][:10].tolist()
+        default=df['Country'][:10].tolist(),
+        key="country_multiselect"
     )
     
     # Index selection
@@ -142,7 +143,8 @@ def main():
     selected_index = st.sidebar.selectbox(
         "Select Index to Display:",
         options=index_options,
-        index=0
+        index=0,
+        key="index_select"
     )
     
     # Filter data
@@ -229,5 +231,4 @@ def main():
     """)
 
 if __name__ == "__main__":
-    main()
     main()
