@@ -50,5 +50,5 @@ Currently, the application uses sample data for demonstration purposes. In a pro
 
 ## Deployed Application
 
-[[https://project-plan-f7snzypxbnrnnz4v2y8rwv.streamlit.app/](https://costofliving-analysis.streamlit.app/)](https://costofliving-analysis.streamlit.app/)
+[(https://costofliving-analysis.streamlit.app/)]
 
