@@ -25,7 +25,7 @@ st.set_page_config(
 )
 
 # Title and description
-st.title("💰 Cost of Living Index by Country")
+st.title("Cost of Living Index by Country")
 st.markdown("""
 This application provides insights into the cost of living across different countries.
 The data includes various indices such as Cost of Living, Rent, Groceries, Restaurant Prices, and Local Purchasing Power.
@@ -79,7 +79,7 @@ def load_housing_costs():
         return None
 
 def show_housing_costs():
-    st.header("🏠 Monthly Housing Cost Breakdown")
+    st.header("Monthly Housing Cost Breakdown")
 
     data = load_housing_costs()
     if not data:
@@ -128,7 +128,7 @@ def main():
     df = load_sample_data()
     
     # Sidebar
-    st.sidebar.header("🔍 Filters and Options")
+    st.sidebar.header("Filters and Options")
     
     # Country selection
     selected_countries = st.sidebar.multiselect(
@@ -155,7 +155,7 @@ def main():
     
     with col1:
         # Bar chart
-        st.subheader(f"📊 {selected_index} by Country")
+        st.subheader(f"{selected_index} by Country")
         fig_bar = px.bar(
             filtered_df.sort_values(selected_index, ascending=False),
             x='Country',
@@ -169,7 +169,7 @@ def main():
     
     with col2:
         # Summary statistics
-        st.subheader("📈 Summary Statistics")
+        st.subheader("Summary Statistics")
         if not filtered_df.empty:
             st.metric("Average", f"{filtered_df[selected_index].mean():.1f}")
             st.metric("Highest", f"{filtered_df[selected_index].max():.1f}")
@@ -177,7 +177,7 @@ def main():
             st.metric("Countries", len(filtered_df))
     
     # World map visualization
-    st.subheader("🗺️ Global Cost of Living Map")
+    st.subheader("Global Cost of Living Map")
     fig_map = px.choropleth(
         df,
         locations='Country',
@@ -192,7 +192,7 @@ def main():
     st.plotly_chart(fig_map, use_container_width=True)
     
     # Correlation matrix
-    st.subheader("🔗 Index Correlations")
+    st.subheader("Index Correlations")
     correlation_data = df.select_dtypes(include=[np.number]).corr()
     fig_corr = px.imshow(
         correlation_data,
@@ -203,7 +203,7 @@ def main():
     st.plotly_chart(fig_corr, use_container_width=True)
     
     # Data table
-    st.subheader("📋 Raw Data")
+    st.subheader("Raw Data")
     st.dataframe(
         filtered_df.sort_values(selected_index, ascending=False),
         use_container_width=True,
@@ -213,7 +213,7 @@ def main():
     # Download data
     csv = df.to_csv(index=False)
     st.download_button(
-        label="📥 Download Complete Dataset",
+        label="Download Complete Dataset",
         data=csv,
         file_name=f"cost_of_living_data_{datetime.now().strftime('%Y%m%d')}.csv",
         mime="text/csv"
@@ -225,7 +225,7 @@ def main():
     # Footer
     st.markdown("---")
     st.markdown("""
-    **Data Note:** This application uses sample data for demonstration purposes. 
+    Data Note: This application uses sample data for demonstration purposes. 
     In a production environment, this would connect to real cost of living data sources 
     such as Numbeo, World Bank, or other economic databases.
     """)
