@@ -12,6 +12,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 import numpy as np
 from datetime import datetime
+import json
+import matplotlib.pyplot as plt
 
 # Page configuration
 st.set_page_config(
@@ -62,6 +64,62 @@ def load_sample_data():
     df.loc[df['Country'] == 'Vietnam', 'Cost of Living Index'] = 24.8
     
     return df
+
+# --- NEW: Housing Costs Visualization Section ---
+@st.cache_data
+def load_housing_costs():
+    """Load housing costs dataset from JSON file"""
+    try:
+        with open("data/housing_costs.json") as f:
+            data = json.load(f)
+        return data
+    except Exception as e:
+        st.warning(f"Could not load housing costs dataset: {e}")
+        return None
+
+def show_housing_costs():
+    st.header("🏠 Monthly Housing Cost Breakdown")
+
+    data = load_housing_costs()
+    if not data:
+        st.info("No housing costs data found.")
+        return
+
+    categories = data["categories"]
+    costs = data["costs"]
+    expenses = data["expenses"]
+
+    df_housing = pd.DataFrame({
+        "Category": categories,
+        "Cost": costs
+    })
+
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.subheader("Line Chart")
+        fig = px.line(df_housing, x="Category", y="Cost", markers=True, title="Monthly Cost by Category")
+        st.plotly_chart(fig, use_container_width=True)
+    with col2:
+        st.subheader("Pie Chart")
+        fig = px.pie(df_housing, names="Category", values="Cost", title="Cost Distribution")
+        st.plotly_chart(fig, use_container_width=True)
+    with col3:
+        st.subheader("Bar Chart")
+        fig = px.bar(df_housing, x="Category", y="Cost", title="Monthly Cost by Category", color="Category")
+        st.plotly_chart(fig, use_container_width=True)
+
+    # Histogram
+    st.subheader("Histogram of Monthly Expenses")
+    fig_hist, ax_hist = plt.subplots()
+    ax_hist.hist(expenses, bins=10, color='skyblue', edgecolor='black')
+    ax_hist.set_xlabel('Expense Amount (USD)')
+    ax_hist.set_ylabel('Frequency')
+    st.pyplot(fig_hist)
+
+    # Raw Data
+    st.subheader("Raw Housing Cost Data")
+    st.dataframe(df_housing, use_container_width=True)
+# --- END NEW SECTION ---
 
 def main():
     """Main application function"""
@@ -159,6 +217,9 @@ def main():
         mime="text/csv"
     )
     
+    # Show housing costs visualizations
+    show_housing_costs()
+    
     # Footer
     st.markdown("---")
     st.markdown("""
@@ -168,4 +229,5 @@ def main():
     """)
 
 if __name__ == "__main__":
+    main()
     main()
