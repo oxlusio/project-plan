@@ -22,10 +22,9 @@ This project presents an interactive Streamlit web application that analyzes and
 
 ## Team Members
 
-**ENG220 Project Team:**
--
-
-*Note: Please update the team member names and roles according to your actual team composition.*
+**ENG220 Project Team:*
+- Natalia Rico
+- 
 
 ##  Dependencies
 
@@ -51,35 +50,5 @@ Currently, the application uses sample data for demonstration purposes. In a pro
 
 ## Deployed Application
 
-https://project-plan-f7snzypxbnrnnz4v2y8rwv.streamlit.app/
+[https://project-plan-f7snzypxbnrnnz4v2y8rwv.streamlit.app/](https://costofliving-analysis.streamlit.app/)
 
-### Deployment Instructions
-
-#### Streamlit Community Cloud
-1. Push your code to GitHub
-2. Visit [share.streamlit.io](https://share.streamlit.io/)
-3. Connect your GitHub repository
-4. Deploy with one click!
-
-## Project Structure
-
-```
-project-plan/
-├── app.py                 # Main Streamlit application
-├── requirements.txt       # Python dependencies
-├── README.md             # Project documentation
-├── .gitignore           # Git ignore file
-└── data/                # Data files (future enhancement)
-```
-
-##  Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
