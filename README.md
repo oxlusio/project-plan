@@ -24,7 +24,9 @@ This project presents an interactive Streamlit web application that analyzes and
 
 **ENG220 Project Team:*
 - Natalia Rico
-- 
+- Serena Apodaca
+- Mia Andrade
+- Avi P
 
 ##  Dependencies
 
